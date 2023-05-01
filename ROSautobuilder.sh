@@ -2,8 +2,8 @@
 
 #Please do not use script if you are not sure about your system version or it's compatability with ROS noetic
 
-read -p "Enter your Ubuntu version(18, 20, 22): " ver
-
+#read -p "Enter your Ubuntu version(18, 20, 22): " ver
+$0 = ver
 if [[ $ver -eq 20 ]]
 then
     echo "Build ROS noetic for 20.04"
@@ -50,10 +50,12 @@ then
         echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
         echo "Build for Ubuntu 20.04 finished"
+        exit 0
 
     elif [[ $choice != 'yes' ]] && [[ $choice != 'y' ]] && [[ $choice != 'да' ]] && [[ $choice != 'д' ]]
         then    
             echo "Build aborted"
+            exit 1
     fi
 
 elif [[ $ver -eq 18 ]]
@@ -106,6 +108,7 @@ then
 
     else
         echo "Build aborted. Something went wrong"
+        exit 1
     fi
 
 elif [[ $ver -eq 22 ]]
@@ -131,5 +134,6 @@ then
         ../ros_from_src/build.sh
     else
         echo "Build aborted. Something went wrong"
+        exit 1
     fi
 fi
