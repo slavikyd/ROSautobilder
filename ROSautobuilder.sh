@@ -4,7 +4,7 @@
 
 read -p "Enter your Ubuntu version(18, 20, 22): " ver
 
-if [ $ver eq 20 ]
+if [ $ver -eq 20 ]
 then
     echo "Build ROS noetic for 20.04"
 
@@ -46,11 +46,11 @@ then
 
     # echo "Build for Ubuntu 20.04 finished"
 
-elif [ $ver eq 18 ]
+elif [ $ver -eq 18 ]
 then
     echo "Build ROS noetic for 18.04"
 
-elif [ $ver eq 22 ]
+elif [ $ver -eq 22 ]
 then
     echo "Building ROS noetic for 22.04, may be unstable, look after installation logs"
 fi
