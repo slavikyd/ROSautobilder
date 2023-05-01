@@ -53,6 +53,7 @@ then
 
     else
         echo "Build aborted"
+    fi
 
 elif [ $ver -eq 18 ]
 then
@@ -103,6 +104,7 @@ then
 
     else
         echo "Build aborted"
+    fi
 
 elif [ $ver -eq 22 ]
 then
