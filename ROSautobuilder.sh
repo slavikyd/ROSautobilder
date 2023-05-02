@@ -1,9 +1,10 @@
 #!/bin/bash
 
 #Please do not use script if you are not sure about your system version or it's compatability with ROS noetic
-
 #read -p "Enter your Ubuntu version(18, 20, 22): " ver
-$0 = ver
+
+ver=$1
+
 if [[ $ver -eq 20 ]]
 then
     echo "Build ROS noetic for 20.04"
@@ -132,6 +133,9 @@ then
         sudo ../ros_from_src/dependencies.sh
         
         ../ros_from_src/build.sh
+
+        echo "Build for 22.04 finished"
+
     else
         echo "Build aborted. Something went wrong"
         exit 1
