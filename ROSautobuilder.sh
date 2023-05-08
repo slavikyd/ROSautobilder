@@ -3,6 +3,11 @@
 #Please do not use script if you are not sure about your system version or it's compatability with ROS noetic
 #read -p "Enter your Ubuntu version(18, 20, 22): " ver
 
+if [[ ! -n $1 ]]
+then
+    echo "No argument given. Check README before retrying"
+    exit 1
+
 ver=$1
 
 if [[ $ver -eq 20 ]]
