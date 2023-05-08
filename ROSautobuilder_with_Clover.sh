@@ -4,6 +4,11 @@
 
 #read -p "Enter your Ubuntu version(18, 20, 22): " ver
 
+if [[ ! -n $1 ]]
+then
+    echo "No argument given. Check README before retrying"
+    exit 1
+
 ver=$1
 wait || { echo "Something failed: $?" >&2; exit 1;}
 #for 20.04
@@ -93,7 +98,7 @@ then
             pip3 install --user toml
 
             echo "Geographic data installation"
-            sudo /opt/ros/noetic/lib/mavros/install_geographiclib_datasets.sh
+            #sudo /opt/ros/noetic/lib/mavros/install_geographiclib_datasets.sh
 
 
             curl https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh -o install_geographiclib_datasets.sh
@@ -207,7 +212,7 @@ then
             pip3 install --user toml
 
             echo "Geographic data installation"
-            sudo /opt/ros/noetic/lib/mavros/install_geographiclib_datasets.sh
+            #sudo /opt/ros/noetic/lib/mavros/install_geographiclib_datasets.sh
 
 
             curl https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh -o install_geographiclib_datasets.sh
@@ -294,12 +299,19 @@ then
             pip3 install --user toml
 
             echo "Geographic data installation"
-            sudo /opt/ros/noetic/lib/mavros/install_geographiclib_datasets.sh
+            #sudo /opt/ros/noetic/lib/mavros/install_geographiclib_datasets.sh
 
 
-            curl https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh -o install_geographiclib_datasets.sh
-            chmod a+x ./install_geographiclib_datasets.sh
-            sudo ./install_geographiclib_datasets.sh
+            #curl https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh -o install_geographiclib_datasets.sh
+            #chmod a+x ./install_geographiclib_datasets.sh
+            #sudo ./install_geographiclib_datasets.sh
+
+            tar xfpz GeographicLib-2.2.tar.gz
+            cd GeographicLib-2.2 
+            mkdir BUILD
+            cd BUILD
+            cmake ..
+            cd ../..
 
 
             echo "Final steps"
