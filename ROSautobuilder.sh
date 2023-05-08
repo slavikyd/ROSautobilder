@@ -7,7 +7,7 @@ if [[ ! -n $1 ]]
 then
     echo "No argument given. Check README before retrying"
     exit 1
-
+fi
 ver=$1
 
 if [[ $ver -eq 20 ]]

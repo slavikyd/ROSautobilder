@@ -8,7 +8,7 @@ if [[ ! -n $1 ]]
 then
     echo "No argument given. Check README before retrying"
     exit 1
-
+fi
 ver=$1
 wait || { echo "Something failed: $?" >&2; exit 1;}
 #for 20.04
