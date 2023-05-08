@@ -241,7 +241,7 @@ then
     then
         echo "Starting"
 
-        git clone git@github.com:lucasw/ros_from_src.git
+        git clone https://github.com/lucasw/ros_from_src.git
         
         mkdir build
         
