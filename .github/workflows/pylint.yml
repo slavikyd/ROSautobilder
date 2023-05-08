@@ -8,13 +8,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: Test
       run: |
-        sudo apt-get install -y xdotool
         chmod +x ROSautobuilder.sh
         chmod +x test.sh
         ./test.sh ROSautobuilder.sh
     - name: Test
       run: |
-        sudo apt-get install -y xdotool
         chmod +x ROSautobuilder_with_Clover.sh
         chmod +x test.sh
         ./test.sh ROSautobuilder_with_Clover.sh

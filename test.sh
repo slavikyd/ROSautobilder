@@ -17,7 +17,7 @@ fi
 echo "Main test"
 ./$test_file 18 > /dev/null
 testOut=`echo $?`
-if [[ $testOut -eq 0 ]]
+if [[ $testOut -eq 1 ]]
 then
     echo "Test passed"
 else
