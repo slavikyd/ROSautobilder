@@ -47,14 +47,10 @@ then
 
         rosdep update
 
-        sudo mkdir catkin_ws
-
-        cd catkin_ws/
-
-        mkdir src
-
-        sudo apt install catkin
-
+        mkdir -p ~/catkin_ws/src
+        
+        cd ~/catkin_ws
+        
         catkin_make
 
         echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
