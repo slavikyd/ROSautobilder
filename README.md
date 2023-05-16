@@ -32,3 +32,12 @@ For installation with [Clover packages](https://github.com/CopterExpress/clover)
 ./ROSautobuilder_with_Clover.sh version-number
 ```
 P.S.: Clover installation may be unstable on 22 Ubuntu version due to official incompatiability of ROS with it. Please look after the installation and if you have spotted some troubles open an issue to let me know about.
+#### New version
+Now you can use a bit optimized version of code, which is pretty similar to previous, but have some changes
+
+To use just execute folowing steps:
+```bash
+chmod +x main.sh
+./main.sh version_number
+```
+P.P.S.: In sooner updates it will be the main version of script
