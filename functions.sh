@@ -51,7 +51,7 @@ function ros_install_and_build_20_18(){
     elif [[ $choice != 'yes' ]] && [[ $choice != 'y' ]] && [[ $choice != 'да' ]] && [[ $choice != 'д' ]]
         then    
             echo "Build aborted"
-            exit 2
+            exit 8
     fi
 }
 
@@ -81,7 +81,7 @@ function ros_install_and_build_22(){
         echo "Build ROS for 22.04 finished"
     else
         echo "Build aborted. Something went wrong"
-        exit 2
+        exit 8
     fi
 }
 
@@ -140,7 +140,7 @@ function px4clover_install_build(){
 
         else
             echo "Build aborted. Something went wrong"
-            exit 2
+            exit 8
         fi
 
 }
