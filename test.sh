@@ -1,8 +1,6 @@
 #!/bin/bash
 test_file=$1
-
 chmod +x $test_file
-
 echo "Test for args started"
 ./$test_file > /dev/null
 testOut=`echo $?`
@@ -13,7 +11,6 @@ else
     echo "Test failed"
     exit 1
 fi
-
 echo "Main test"
 ./$test_file 18 > /dev/null
 echo "1"
