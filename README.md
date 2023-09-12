@@ -14,7 +14,7 @@ cd ROSautobuilder
 chmod +x ROSautobuilder.sh
 chmod +x ROSautobuilder_with_Clover.sh
 ```
-Once done you can proceed for installation, but before that make sure I have Ubuntu version not earlier than 18.04 and have preinstalled GIT and curl if they aren't installed you can use following commands:
+Once done you can proceed for installation, but before that make sure you have Ubuntu version not earlier than 18.04 and have preinstalled GIT and curl. If they aren't installed you can use following commands:
 ```bash
 sudo apt install curl
 sudo apt install git
