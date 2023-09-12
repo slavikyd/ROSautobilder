@@ -145,4 +145,33 @@ function px4clover_install_build(){
 
 }
 
+### EXPERIMENTAL FEATURE
+function ros2_install_and_build_test(){
 
+    sudo apt update && sudo apt install curl gnupg2 lsb-release
+    sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg
+
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+
+    echo "Downloading core ROS2 packages"
+    xdg-open https://github.com/ros2/ros2/releases/download/release-iron-20230912/ros2-iron-20230912-linux-jammy-amd64.tar.bz2
+    echo "Done"
+    mkdir -p ~/ros2_dashing
+    cd ~/ros2_dashing
+    tar xf ~/Downloads/ros2-dashing-linux-x86_64.tar.bz2
+
+    sudo apt update
+    sudo apt install -y python-rosdep
+    sudo rosdep init
+    rosdep update
+    #rosdep dependencies
+    rosdep install --from-paths ~/ros2_dashing/ros2-linux/share --ignore-src --rosdistro dashing -y --skip-keys "console_bridge fastcdr fastrtps libopensplice67 libopensplice69 osrf_testing_tools_cpp poco_vendor rmw_connext_cpp rosidl_typesupport_connext_c rosidl_typesupport_connext_cpp rti-connext-dds-5.3.1 tinyxml_vendor tinyxml2_vendor urdfdom urdfdom_headers"
+
+    sudo apt install -y libpython3-dev python3-pip
+    pip3 install -U argcomplete
+
+    . ~/ros2_dashing/ros2-linux/setup.bash
+
+    echo "looks like it worked out after all..."
+    exit 0
+}

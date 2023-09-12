@@ -29,4 +29,13 @@ then
     ros_install_and_build_22
 
     px4clover_install_build
+#test
+elif [[ $ver -eq 99 ]]
+then
+    echo "are you sure?"
+    read answ
+    if [[ $answ == "yes" ]]
+    then
+        ros2_install_and_build_test
+    fi
 fi
