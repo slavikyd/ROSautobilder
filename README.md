@@ -6,7 +6,7 @@
 
 #### For installation use following commands:
 ```bash
-git clone https://github.com/slavikyd/ROSautobilder
+git clone https://github.com/slavikyd/ROSautobuilder
 ```
 When downloaded you need to enter package directory and give files access for execution
 ```bash
